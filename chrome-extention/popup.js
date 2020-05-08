@@ -2,6 +2,9 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
     if (request.action == "getSource") {
       message.innerText = request.source;
     }
+    if ( request.source == 'https://github.com/' ) {
+      alert('hello world!');
+    }
   });
   
   function onWindowLoad() {
@@ -16,6 +19,8 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
         message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
       }
     });
+
+    
   
   }
   
