@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
   const url = request.source
   
   if (request.action == "getSource") {
-    message.innerText = ''
+    message.innerHTML = ''
     const url = request.source;
     if ( url.match(/https:\/\/www.google.com\/maps/) ) {
       const locPreData = url.split('/')[4]
@@ -12,16 +12,38 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
         if ( (+locData[1]) === 139.6568088 ) {
           if ( 220 <= (+locData[4]) && (+locData[4]) <= 340 ) {
             if ( 60 <= (+locData[5]) && (+locData[5]) <= 130 ) {
-              message.innerText += `ここに到着した時のHTML`
+              message.innerHTML += `<div>
+                                      <h3>たどり着きました！！</p>
+                                      <p><b>やったね！</b></p>
+                                      <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                                    </div>`
             } else {
-              message.innerText += `ここにまだ到着していない時のHTML`
+              message.innerHTML += `<div>
+                                      <h3>あと少し！！</h3>
+                                      <p>振り向いたらもしかして...</p>
+                                      <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                                    </div>`
             }
           } else {
-            message.innerText += `ここにまだ到着していない時のHTML`
+            message.innerHTML += `<div>
+                                      <h3>あと少し！！</h3>
+                                      <p>振り向いたらもしかして...</p>
+                                      <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                                    </div>`
           }
         } else {
-          message.innerText += `ここにまだ到着していない時のHTML`
+          message.innerHTML += `<div>
+                                    <h3>あと少し！！</h3>
+                                    <p>振り向いたらもしかして...</p>
+                                    <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                                </div>`
         }
+      } else {
+        message.innerHTML += `<div>
+                                <h3>あと少し！！</h3>
+                                <p>振り向いたらもしかして...</p>
+                                <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                              </div>`
       }
     } else {
       message.innerHTML = `<a href="https://www.google.com/maps/@36.1002381,139.6577021,3a,75y,182.38h,95.66t/data=!3m6!1e1!3m4!1sdDiAHzs_vUGvwcbK3AVfgg!2e0!7i16384!8i8192?hl=ja" target="_blank">ここからスタート</a>                         
