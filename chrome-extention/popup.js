@@ -31,20 +31,20 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                                       <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
                                     </div>`
           }
-        } else {
-          message.innerHTML += `<div>
-                                    <h3>もう少し巡ってみよう！</h3>
-                                    <p>もっとだ！　もっと探すのだ！！</p>
-                                    <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
-                                </div>`
         }
+      } else if ((+locData[0]) !== 36.1002381 && (+locData[1]) !== 139.6577021) {
+        message.innerHTML += `<div>
+                                <h3>もう少し巡ってみよう！</h3>
+                                <p>もっとだ！　もっと探すのだ！！</p>
+                                 <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
+                              </div>`
       } else {
         message.innerHTML += `<div>
                                 <h3>この画像の聖地を探してね！！</h3>
                                 <p>いろいろ、巡ってみようze！</p>
                                 <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
                               </div>`
-                              
+
       }
 
     } else {
