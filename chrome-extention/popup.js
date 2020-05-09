@@ -44,7 +44,9 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                                 <p>いろいろ、巡ってみようze！</p>
                                 <img src="66c19942ab4ba346fdb64ccc04cde373-6-e1534034135968.jpg" >
                               </div>`
+                              
       }
+
     } else {
       message.innerHTML = `<a href="https://www.google.com/maps/@36.1002381,139.6577021,3a,75y,182.38h,95.66t/data=!3m6!1e1!3m4!1sdDiAHzs_vUGvwcbK3AVfgg!2e0!7i16384!8i8192?hl=ja" target="_blank">ここからスタート</a>                         
                            <div>
